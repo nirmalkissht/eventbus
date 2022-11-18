@@ -1,0 +1,16 @@
+{
+    "name": "kisshteventproducer/kafka",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Kisshteventproducer\\Kafka\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Nirmal Sharma",
+            "email": "nirmal.sharma@kissht.com"
+        }
+    ],
+    "require": {}
+}
