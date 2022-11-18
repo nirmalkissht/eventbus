@@ -12,7 +12,7 @@ use Kisshteventproducer\Kafka\Handlers\KafkaProducerHandler;
 abstract class Kafka {
 
     private static function isKafkaEnabled() {
-        return env("IS_KAFKA_ENABLED", 0);
+        return config('kafkawrapper.is_kafka_enabled');
     }
 
     /**

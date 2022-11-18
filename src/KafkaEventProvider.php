@@ -33,9 +33,16 @@ class KafkaEventProvider extends ServiceProvider
      * @return void
      */
     public function boot()
-    {
+    {   
+        
         include __DIR__.'/routes.php';
         $this->loadViewsFrom(__DIR__.'/views', 'kafka');
+
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__.'/config.php' => config_path('kafkawrapper.php'),
+            ], 'config');
+        }
 
         $conf = $this->setConf(self::PRODUCER_ONLY_CONFIG_OPTIONS);
 
@@ -58,7 +65,7 @@ class KafkaEventProvider extends ServiceProvider
         }
 
         # Custom Brokers
-        $conf->set('metadata.broker.list', env("KAFKA_BROKERS"));
+        $conf->set('metadata.broker.list', config("kafkawrapper.kafka_brokers"));
 
         if (env('KAFKA_DEBUG', false)) {
             $conf->set('log_level', LOG_DEBUG);
