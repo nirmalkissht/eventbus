@@ -12,9 +12,7 @@
             "email": "nirmal.sharma@kissht.com"
         }
     ],
-    "require": {
-        "php": "^7.2|^7.4|^8.0|^8.1"
-    },
+    "require": {},
     "extra": {
         "laravel": {
             "providers": [
