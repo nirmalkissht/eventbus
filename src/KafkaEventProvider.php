@@ -65,7 +65,7 @@ class KafkaEventProvider extends ServiceProvider
         }
 
         # Custom Brokers
-        $conf->set('metadata.broker.list', env("kafka_brokers"));
+        $conf->set('metadata.broker.list', env("KAFKA_BROKERS"));
 
         if (env('KAFKA_DEBUG', false)) {
             $conf->set('log_level', LOG_DEBUG);
