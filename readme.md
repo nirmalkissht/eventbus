@@ -158,7 +158,7 @@ rdkafka
 
 ## Screenshots
 
-![App Screenshot](https://www.linkpicture.com/q/Screenshot-from-2022-11-21-12-17-20.png)
+![App Screenshot]()
 
 
 ## Features
