@@ -1,22 +1,20 @@
 {
-    "name": "kisshteventproducer/kafka",
+    "name": "LaravelKafka/producer",
     "type": "library",
     "autoload": {
         "psr-4": {
-            "Kisshteventproducer\\Kafka\\": "src/"
+            "LaravelKafka\\Producer\\": "src/"
         }
     },
     "authors": [
-        {
-            "name": "Nirmal Sharma",
-            "email": "nirmal.sharma@kissht.com"
-        }
+        {"name": "Nirmal Sharma"},
+        {"name": "Praveen Menezes"}
     ],
     "require": {},
     "extra": {
         "laravel": {
             "providers": [
-                "Kisshteventproducer\\Kafka\\KafkaEventProvider"
+                "LaravelKafka\\Producer\\EventProvider"
             ]
         }
     },
