@@ -9,7 +9,7 @@ Install kissht kafka wrapper
 
 ## Add provide in app.php
 
-Kisshteventproducer\Kafka\KafkaEventProvider::class,
+LaravelKafka\Producer\KafkaEventProvider::class,
 
 ## Test Kafka
 http://localhost:8000/kafka-test
@@ -23,7 +23,7 @@ http://localhost:8000/kafka-test
 Add following in web.php
 
 ```bash
-use Kisshteventproducer\Kafka\Events\KafkaTestEvent;
+use LaravelKafka\Producer\Events\KafkaTestEvent;
 
 Route::get('/', function () {
     KafkaTestEvent::publish(

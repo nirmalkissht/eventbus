@@ -1,13 +1,11 @@
 <?php
-
-namespace KisshtEventProducer\Kafka;
+namespace LaravelKafka\Producer;
 
 use Illuminate\Support\ServiceProvider;
 use RdKafka\Conf;
 use RdKafka\Producer;
 
-class KafkaEventProvider extends ServiceProvider
-{
+class KafkaProducerServiceProvider extends ServiceProvider {
     const PRODUCER_ONLY_CONFIG_OPTIONS = [
         'security.protocol'  => 'ssl',
         'compression.type'   => 'snappy',
@@ -16,34 +14,19 @@ class KafkaEventProvider extends ServiceProvider
         'enable.idempotence' => true,
     ];
 
-
     /**
      * Register services.
      *
      * @return void
      */
-    public function register()
-    {
-        //
-    }
+    public function register() {}
 
     /**
      * Bootstrap services.
      *
      * @return void
      */
-    public function boot()
-    {   
-        
-        include __DIR__.'/routes.php';
-        $this->loadViewsFrom(__DIR__.'/views', 'kafka');
-
-        // if ($this->app->runningInConsole()) {
-        //     $this->publishes([
-        //         __DIR__.'/config.php' => config_path('kafkawrapper.php'),
-        //     ], 'config');
-        // }
-
+    public function boot() {
         $conf = $this->setConf(self::PRODUCER_ONLY_CONFIG_OPTIONS);
 
         $this->app->bind(Producer::class, function () use ($conf) {
