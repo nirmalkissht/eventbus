@@ -1,4 +1,4 @@
-# A Lightweight Kafka Producer Warpper for Laravel 6+ and PHP 7.2+
+## A Lightweight Kafka Producer Warpper for Laravel 6+ and PHP 7.2+
 
 Install Kafka Producer Warpper
 
@@ -6,15 +6,9 @@ Install Kafka Producer Warpper
   composer require nirmalsharma/laravel-kafka-producer
 ```
 
-## Add provide in app.php
-
-LaravelKafka\Producer\KafkaEventProvider::class,
 
 ## Examples
-[Laravel 6](examples/laravel-6)
-
-
-
+[Laravel 6](examples/laravel-6-example)
 
 
 ## Use Kafka in code.
