@@ -1,21 +1,33 @@
 {
-    "name": "LaravelKafka/producer",
+    "name": "nirmalsharma/laravel-kafka",
     "type": "library",
     "autoload": {
         "psr-4": {
-            "LaravelKafka\\Producer\\": "src/"
+            "NirmalSharma\\LaravelKafka\\": "src/"
         }
     },
     "authors": [
-        {"name": "Nirmal Sharma"},
-        {"name": "Praveen Menezes"}
+        {
+            "name": "Nirmal Sharma",
+            "email": ""
+        },
+        {
+            "name": "Praveen Menezes",
+            "email": "praveen23011993@gmail.com"
+        }
     ],
-    "require": {},
+    "require": {
+        "php": ">=7.2",
+        "laravel/framework": "^6.0.0"
+    },
     "extra": {
         "laravel": {
             "providers": [
-                "LaravelKafka\\Producer\\EventProvider"
-            ]
+                "NirmalSharma\\LaravelKafka\\KafkaServiceProvider"
+            ],
+            "aliases": {
+                "Kafka": "NirmalSharma\\LaravelKafka\\Services\\Kafka"
+            }
         }
     },
     "license": "MIT"

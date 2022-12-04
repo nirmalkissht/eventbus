@@ -5,14 +5,14 @@
  * This file takes care of the conversation between PHP and Kafka
  */
 
-namespace LaravelKafka\Producer\Services;
+namespace NirmalSharma\LaravelKafka\Services;
 
-use LaravelKafka\Producer\Handlers\KafkaProducerHandler;
+use NirmalSharma\LaravelKafka\Handlers\KafkaProducerHandler;
 
 abstract class Kafka {
 
     private static function isKafkaEnabled() {
-        return env('IS_KAFKA_ENABLED');
+        return config("kafka.is_enabled");
     }
 
     /**
@@ -37,14 +37,5 @@ abstract class Kafka {
 
             $obj->send();
         }
-    }
-
-    public static function getHeader(string $key, int $schemaVersion = 1) :array {
-        return [
-            "Content-Type"   => "application/json",
-            "Schema-URL"     => "user-attributes-$key",
-            "Schema-Subject" => "user-attributes-$key",
-            "Schema-Version" => $schemaVersion,
-        ];
     }
 }
