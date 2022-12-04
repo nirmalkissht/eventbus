@@ -1,18 +1,17 @@
+# A Lightweight Kafka Producer Warpper for Laravel 6+ and PHP 7.2+
 
-# Kafka wrapper for Laravel 6+
-
-Install kissht kafka wrapper
+Install Kafka Producer Warpper
 
 ```bash
-  composer require kisshteventproducer/kafka
+  composer require nirmalsharma/laravel-kafka-producer
 ```
 
 ## Add provide in app.php
 
-Kisshteventproducer\Kafka\KafkaEventProvider::class,
+LaravelKafka\Producer\KafkaEventProvider::class,
 
-## Test Kafka
-http://localhost:8000/kafka-test
+## Examples
+[Laravel 6](examples/laravel-6)
 
 
 
@@ -23,132 +22,40 @@ http://localhost:8000/kafka-test
 Add following in web.php
 
 ```bash
-use Kisshteventproducer\Kafka\Events\KafkaTestEvent;
+use Kafka;
 
-Route::get('/', function () {
-    KafkaTestEvent::publish(
-        'IDEP168647251797S81J'
-    );
-});
+$topic = "kafka-topic";
+$data = [
+    "user_ref" => "usr.123456",
+    "message" => "Hello World"
+];
+$key = "usr.123456"; // Optional, Default null
+$headers = [
+    "ContentType" => "application/json",
+    "Timezone" => "GMT +05:30"
+]; // Optional
+Kafka::push($topic, $data, $key, $headers);
 
 ```
 ## Environment Variables
 
 To run this, you will need to add the following environment variables to your .env file
-
-`IS_KAFKA_ENABLED=1`
-
-`KAFKA_BROKERS=server-1, server-2`
-
-`KAFKA_DEBUG=false`
-
-
-# For this wrapper is required to pre installed rdkafka, please follow steps to install rdkafka.
-## Installation rdkafka (Ubuntu)
-
-Install PHP pecl and pear commands
-
-```bash
-  sudo apt install php-pear php-dev
-```
-
-Install librdkafka
-
-```bash
-sudo apt-get install -y librdkafka-dev
-```
-
-Install PECL-package
-
-```bash
-sudo pecl install rdkafka
-```
-
-Enable PHP-extension in PHP config. Add to php.ini
-
-```bash
-sudo nano /etc/php/<PHP_VERSION>/cli/php.ini
-sudo nano /etc/php/<PHP_VERSION>/apache/php.ini
-sudo nano /etc/php/<PHP_VERSION>/nginx/php.ini
-
-Add the below line at the end of php.inifiles
-extension=rdkafka.so
+Config reference: https://github.com/edenhill/librdkafka/blob/master/CONFIGURATION.md
 
 ```
-
-Reload apache/nginx (Optional for local environment)
-```bash
-sudo service apache2 reload
-sudo service nginx reload
-```
-
-Verify if the installation is working (CLI)
-```bash
-php -m | grep 
-
-output :
-rdkafka
-```
-
-
-
-## Installation rdkafka (MAC)
-
-Install librdkafka
-
-```bash
-brew install librdkafka
-```
-
-Install PECL-package
-
-```bash
-sudo pecl install rdkafka
-```
-
-If the above command throws error, then we must install it manually
-
-```bash
-cd ~
-pecl download rdkafka-6.0.3
-tar xf rdkafka-6.0.3.tgz
-cd rdkafka-6.0.3
-phpize
-./configure --with-rdkafka="$(brew --prefix librdkafka)" --with-php-config="$(which php-config)"
-make
-make install
-```
-
-Enable PHP-extension in PHP config. Add to php.ini
-
-```bash
-sudo nano /etc/php/<PHP_VERSION>/cli/php.ini
-sudo nano /etc/php/<PHP_VERSION>/apache/php.ini
-sudo nano /etc/php/<PHP_VERSION>/nginx/php.ini
-
-Add the below line at the end of php.inifiles
-extension=rdkafka.so
-
-```
-
-Reload apache/nginx (Optional for local environment)
-```bash
-sudo service apache2 reload
-sudo service nginx reload
-```
-
-Verify if the installation is working (CLI)
-```bash
-php -m | grep 
-
-output :
-rdkafka
+IS_KAFKA_ENABLED=             // Default:  1
+KAFKA_BROKERS=
+KAFKA_DEBUG=                  // Default: false
+KAFKA_SSL_PROTOCOL=           // Default: plaintext
+KAFKA_COMPRESSION_TYPE=       // Default: none
+KAFKA_IDEMPOTENCE=            // Default: false
 ```
 
 
 ## Authors
 
-- [@kissht](https://www.github.com/kissht)
+- [Nirmal Sharma](https://github.com/nirmalkissht)
+- [Praveen Menezes](https://github.com/praveenmenezes)
 
 
 ## License
@@ -156,18 +63,8 @@ rdkafka
 [MIT](https://choosealicense.com/licenses/mit/)
 
 
-## Screenshots
-
-![App Screenshot](https://www.linkpicture.com/q/Screenshot-from-2022-11-21-13-28-17.png)
-
 
 ## Features
 
 - Light weight kakfa wrapper
 - Easy to use event produce in code.
-
-
-## Documentation
-
-[Documentation](https://linktodocumentation)
-

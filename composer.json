@@ -1,23 +1,33 @@
 {
-    "name": "kisshteventproducer/kafka",
+    "name": "nirmalsharma/laravel-kafka",
     "type": "library",
     "autoload": {
         "psr-4": {
-            "Kisshteventproducer\\Kafka\\": "src/"
+            "NirmalSharma\\LaravelKafka\\": "src/"
         }
     },
     "authors": [
         {
             "name": "Nirmal Sharma",
-            "email": "nirmal.sharma@kissht.com"
+            "email": ""
+        },
+        {
+            "name": "Praveen Menezes",
+            "email": "praveen23011993@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "php": ">=7.2",
+        "laravel/framework": "^6.0.0"
+    },
     "extra": {
         "laravel": {
             "providers": [
-                "Kisshteventproducer\\Kafka\\KafkaEventProvider"
-            ]
+                "NirmalSharma\\LaravelKafka\\KafkaServiceProvider"
+            ],
+            "aliases": {
+                "Kafka": "NirmalSharma\\LaravelKafka\\Services\\Kafka"
+            }
         }
     },
     "license": "MIT"
