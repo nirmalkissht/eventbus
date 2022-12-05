@@ -3,7 +3,7 @@
     "type": "library",
     "autoload": {
         "psr-4": {
-            "NirmalSharma\\LaravelKafka\\": "src/"
+            "NirmalSharma\\LaravelKafkaProducer\\": "src/"
         }
     },
     "authors": [
@@ -23,10 +23,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "NirmalSharma\\LaravelKafka\\KafkaServiceProvider"
+                "NirmalSharma\\LaravelKafkaProducer\\KafkaServiceProvider"
             ],
             "aliases": {
-                "Kafka": "NirmalSharma\\LaravelKafka\\Services\\Kafka"
+                "Kafka": "NirmalSharma\\LaravelKafkaProducer\\Services\\Kafka"
             }
         }
     },
