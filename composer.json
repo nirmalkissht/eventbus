@@ -1,5 +1,5 @@
 {
-    "name": "nirmalsharma/laravel-kafka",
+    "name": "nirmalsharma/laravel-kafka-producer",
     "type": "library",
     "autoload": {
         "psr-4": {
