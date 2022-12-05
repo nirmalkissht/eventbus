@@ -1,5 +1,5 @@
 <?php
-namespace NirmalSharma\LaravelKafka;
+namespace NirmalSharma\LaravelKafkaProducer;
 
 use Illuminate\Support\ServiceProvider;
 use RdKafka\Conf;

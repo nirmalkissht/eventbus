@@ -5,7 +5,7 @@
  * @link https://github.com/anam-hossain/laravel-kafka-pub-example
  */
 
-namespace NirmalSharma\LaravelKafka\Handlers;
+namespace NirmalSharma\LaravelKafkaProducer\Handlers;
 
 use Exception;
 use RdKafka\Producer;

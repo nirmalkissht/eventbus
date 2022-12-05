@@ -5,9 +5,9 @@
  * This file takes care of the conversation between PHP and Kafka
  */
 
-namespace NirmalSharma\LaravelKafka\Services;
+namespace NirmalSharma\LaravelKafkaProducer\Services;
 
-use NirmalSharma\LaravelKafka\Handlers\KafkaProducerHandler;
+use NirmalSharma\LaravelKafkaProducer\Handlers\KafkaProducerHandler;
 
 abstract class Kafka {
 
