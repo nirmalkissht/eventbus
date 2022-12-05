@@ -1,4 +1,4 @@
-## A Lightweight Kafka Producer Warpper for Laravel 6+ and PHP 7.2+
+## A Lightweight Kafka Producer Warpper for Laravel 6+ and PHP 7.3+
 
 Install Kafka Producer Warpper
 
@@ -48,7 +48,7 @@ KAFKA_IDEMPOTENCE=            // Default: false
 
 ## Authors
 
-- [Nirmal Sharma](https://github.com/nirmalkissht)
+- [Nirmal Sharma](https://github.com/nirmalsharmamca)
 - [Praveen Menezes](https://github.com/praveenmenezes)
 
 
