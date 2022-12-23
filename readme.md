@@ -16,7 +16,7 @@ Install Kafka Producer Warpper
 Add following in web.php
 
 ```bash
-use Kafka;
+use KafkaProducer;
 
 $topic = "kafka-topic";
 $data = [
