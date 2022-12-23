@@ -9,7 +9,7 @@
     "authors": [
         {
             "name": "Nirmal Sharma",
-            "email": ""
+            "email": "nirmalsharmamca@gmail.com"
         },
         {
             "name": "Praveen Menezes",
@@ -25,7 +25,7 @@
                 "NirmalSharma\\LaravelKafkaProducer\\KafkaServiceProvider"
             ],
             "aliases": {
-                "Kafka": "NirmalSharma\\LaravelKafkaProducer\\Services\\Kafka"
+                "KafkaProducer": "NirmalSharma\\LaravelKafkaProducer\\Services\\Kafka"
             }
         }
     },
